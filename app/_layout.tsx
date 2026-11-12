@@ -1,4 +1,4 @@
-import { Stack } from "expo-router";
+﻿import { Stack } from "expo-router";
 import { ThemeProvider } from "../context/ThemeContext";
 
 export default function RootLayout() {
@@ -12,6 +12,7 @@ export default function RootLayout() {
         }}
       >
         <Stack.Screen name="index" options={{ title: "Beranda & Profil Tim" }} />
+        <Stack.Screen name="articles" options={{ title: "Artikel & Riset Tim" }} />
         <Stack.Screen name="docs/index" options={{ title: "Dokumentasi Codelab 2" }} />
         <Stack.Screen name="docs/[...slug]" options={{ title: "Dokumentasi Detail" }} />
         <Stack.Screen name="detail/[id]" options={{ title: "Detail Profil Anggota" }} />

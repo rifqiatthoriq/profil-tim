@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+﻿import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
 import { useRouter } from "expo-router";
 import PageButton from "../components/PageButton";
 import { pageStyles } from "../styles";
@@ -23,7 +23,7 @@ export default function HomePage() {
     <View style={[pageStyles.container, { backgroundColor: bg }]}>
       <Text style={[pageStyles.title, { color: textColor }]}>Page Explorer</Text>
       <Text style={[pageStyles.description, { color: subTextColor }]}>
-        Latihan Expo Router & Context API (Dark Mode)
+        Profil Tim, Router, Context API & External API
       </Text>
 
       <TouchableOpacity
@@ -31,13 +31,20 @@ export default function HomePage() {
         onPress={toggleTheme}
       >
         <Text style={{ color: "#4F46E5", fontWeight: "bold" }}>
-          {darkMode ? "🌙 Mode Gelap (Aktif)" : "☀️ Mode Terang (Aktif)"} - Klik Ubah Tema
+          {darkMode ? "Mode Gelap (Aktif)" : "Mode Terang (Aktif)"} - Klik Ubah Tema
         </Text>
       </TouchableOpacity>
 
+      <View style={{ width: "100%", marginBottom: 10 }}>
+        <PageButton
+          title="Artikel & Riset Tim (External API)"
+          onPress={() => router.push("/articles")}
+        />
+      </View>
+
       <View style={{ width: "100%", marginBottom: 16 }}>
         <PageButton
-          title="📖 Open Documentation (Codelab 2)"
+          title="Open Documentation (Codelab 2)"
           onPress={() => router.push("/docs")}
         />
       </View>
@@ -63,7 +70,7 @@ export default function HomePage() {
               <Text style={[styles.name, { color: textColor }]}>{item.name}</Text>
               <Text style={{ color: subTextColor, fontSize: 13 }}>{item.role}</Text>
             </View>
-            <Text style={{ fontSize: 18 }}>➡️</Text>
+            <Text style={{ fontSize: 18, color: subTextColor }}>&gt;</Text>
           </TouchableOpacity>
         )}
       />
